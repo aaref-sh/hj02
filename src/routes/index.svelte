@@ -4,13 +4,16 @@
 
     import PostList from "../lib/PostList.svelte";
 </script>
-
-<div class="index-main">
-    <div class="index-sidebar">
-        
+<div class="container m-auto">
+    <div class="index-main w-full xl:w-5/6 m-auto grid grid-cols-3 md:grid-cols-4">
+        <div class="index-sidebar m-2 col-span-2 sm:col-span-1  ">
+            <select name="" id="" class="w-full px-2 py-1 border border-sky-600 rounded-lg">
+                <option value="All">الكل</option>
+                <option value="car">سيارات</option>
+            </select>
+        </div>
+        <div class="col-span-4 sm:col-span-3 transition-all">
+            <PostList />
+        </div>
     </div>
-    <div class="index-main">
-
-    </div>
-
 </div>

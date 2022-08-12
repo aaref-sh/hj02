@@ -12,6 +12,7 @@
             location:"سوريا - حماه",
             publisher:"محمد عارف الشامي",
             views:4,
+            image:"src/assets/1.jpg",
             publisher_id:"2"
         },
         {
@@ -21,22 +22,48 @@
             location:"سوريا - حماه",
             publisher:"محمد عارف الشامي",
             views:4,
+            image:"src/assets/1.jpg",
             publisher_id:"2"
         }
     ];
-
 </script>
 
-<div class="posts">
+<div class="list-container m-1 sm:m-2">
     {#each posts as post}
-        <div class="list-item">
-            
-            <a href="./posts/{post.id}" class="list-item-header text-lg text-red-900 ">
-                
+        <div class="p-1 mt-2 border border-blue-200/70 rounded shadow-sm hover:shadow hover:bg-cyan-50/40 transition-all flex">
+            <a href="./{post.id}" class="h-ful w-full flex-auto">
+                <h3 class="list-title px-5 py-2 text-blue-1000 text-lg md:text-2xl">
+                    {post.title}
+                </h3>
+                <hr class="border-t border-sky-300/50 ml-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 pt-2  px-3">
+                    <a href="./users/{post.publisher_id}" class="post-header-item">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span> &nbsp;
+                        {post.publisher}
+                    </a>
+                    <div class="post-header-item">
+                        <span class="material-symbols-outlined">
+                            schedule
+                        </span> &nbsp;
+                        {post.date}
+                    </div>
+                    <div class="post-header-item">
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span> &nbsp;
+                        {post.views}
+                    </div>
+                </div>
             </a>
+            <div class="post-image flex-none h-24 w-24 std-border bg-cover rounded-md" style="background-image: url({post.image});">
+
+            </div>
         </div>
     {/each}
 </div>
+
 
 <style>
 

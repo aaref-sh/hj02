@@ -12,23 +12,47 @@
 	}
 	
 	.item-border{
-		@apply rounded-md border border-red-700/[.9];
+		@apply rounded-md border border-blue-700/[.9];
 	}
 	.spacer{
-		@apply transition-all w-5/6 m-auto border-red-800 border-t;
+		@apply transition-all w-5/6 m-auto border-sky-600 border-t;
 	}
-}
-
-    .red-border{
-        @apply rounded-2xl border-2 border-red-700/[.9];
+    .std-textarea{
+        @apply m-auto p-2 w-full rounded-lg border-2 outline 
+        outline-0 hover:outline-1 active:outline-[3px] outline-sky-600
+        border-sky-700 focus:outline-none focus:ring focus:ring-sky-300;
+    }
+    .hoverd-graded{
+        @apply hover:via-cyan-200/40;
+    }
+    .std-border{
+        @apply rounded-2xl border-2 border-blue-300/[.8];
     }
 	
     .btn-std{
-        @apply transition-all border py-1 px-4 w-32 bg-red-400/[.12] hover:bg-red-600/[.15] text-red-900 hover:shadow-md red-border;
+        @apply transition-all border py-1 px-4 w-32 bg-cyan-200/[.12] hover:bg-sky-300/[.15] text-blue-900 hover:shadow-md std-border;
     }
 	.bg-graded{
-		@apply bg-gradient-to-r from-red-400/[0] via-red-300/30 to-red-400/[0];
+		@apply bg-gradient-to-r from-cyan-400/[0] via-cyan-200/[.15] to-cyan-400/[0];
 	}
+    .post-buttons{
+        @apply flex justify-center flex-auto transition-all text-blue-1000 hoverd-graded bg-graded;
+    }
+
+}
+
+body { font-family: 'Amiri', arial, serif; }
+h2{
+    @apply text-2xl md:text-4xl text-blue-900 transition-all;
+}
+
+option{
+    @apply bg-white/40 hover:bg-graded;
+}
+
+
+
+
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -37,28 +61,21 @@
   'GRAD' 0,
   'opsz' 24
 }
-
-
-
-
 .scrollbar::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
   }
 
 .scrollbar::-webkit-scrollbar-track {
-    background: #ffd2d2;
+    background: #d2d4ff;
     border-radius: 100vh;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-    background: #9d0101;
+    background: #1669dd;
     border-radius: 100vh;
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #6e0000;
+    background: #0f5ecc;
 }
-
-
-body { font-family: 'Amiri', arial, serif; }

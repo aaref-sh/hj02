@@ -1,11 +1,11 @@
 <script>
-	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 	import Footer from '../lib/Footer.svelte';
+	import Navbar from '../lib/Navbar.svelte';
 </script>
 
-<Header />
 
+<Navbar/>
 <main>
 	<slot />
 </main>

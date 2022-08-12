@@ -8,9 +8,9 @@
     */
 </script>
 
-<div class="transition-all similers-container m-2 overflow-hidden red-border">
+<div class="transition-all similers-container m-2 overflow-hidden std-border">
     <div class="similers-header py-4 px-8 text-gray-800  bg-graded">
-        <h2 class="similers-title text-center text-red-900 text-2xl lg:text-4xl ">
+        <h2 class="similers-title text-center">
             عروض مشابهة
         </h2>
         
@@ -22,7 +22,7 @@
             {#each similers as similer}
             <a href="./{similer[0]}">
                 <div class="w-full h-40 bg-cover item-border shadow-md" style="background-image: url('{similer[2]}');">
-                    <p class="bg-gradient-to-r from-red-400/10 via-red-400/40 to-red-400/10 text-center text-white"> {similer[1]}</p>
+                    <p class="bg-gradient-to-r from-sky-400/10 via-blue-400/40 to-sky-400/10 text-center text-white"> {similer[1]}</p>
                 </div>
             </a>
             {/each}
