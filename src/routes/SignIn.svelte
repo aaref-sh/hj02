@@ -1,18 +1,51 @@
 
-<div class="post-container m-auto w-5/6 lg:w-4/5 overflow-hidden red-border">
+<script>
+    import {fade} from 'svelte/transition';
+    import Reset from '../lib/Reset.svelte';
+    import SignUp from '../lib/SignUp.svelte';
+
+    let resetting = false;
+    let signing = false;
+    const reset = () => {
+        resetting = !resetting;
+    };
+
+    const signup = () => {
+        signing= !signing;
+    };
+</script>
+
+{#if resetting}
+<div in:fade>
+    <Reset on:click={reset}/></div>
+{:else if signing}
+<div in:fade>
+    <SignUp on:click={signup}/></div>
+{:else}
+
+<div in:fade class="post-container m-auto w-5/6 md:w-[500px] std-border">
     <div class="post-header py-4 px-8 bg-graded">
-        <h2 class="post-title text-center text-red-900 text-2xl lg:text-4xl ">
-            Sign In
+        <h2 class="post-title text-center ">
+            تسجيل الدخول
         </h2>
         
     </div>
     
-    <hr class="sapcer w-5/6 m-auto border-red-800 border-t "/>
+    <hr class="sapcer w-5/6 m-auto"/>
     <div class="post-body text-lg text-gray-700/[.95] py-4 px-6 flex flex-col">
-        <input placeholder="Username" type="text" class="w-full md:w-3/4 m-auto px-3 hover:bg-red-600/[.05] rounded-md outline outline-1 outline-red-600/50"/>
+        <input placeholder="رقم الهاتف" type="number" 
+        class=" std-textbox w-4/5  mb-4 m-auto"/>
+        <input placeholder="كلمة المرور" type="password" 
+        class=" std-textbox w-4/5 mb-4 m-auto"/>
 
-        <slot name='post-body'>
-            <span class="missing">Unknown body</span>
-        </slot>
+        <div class="links mr-8 text-gray-400 text-sm">
+            هل نسيت كلمة المرور؟ <button on:click="{reset}">إعادة تعيين كلمة المرور</button>
+            <br>
+            إذا لم يكن لديك حساب <button on:click="{signup}" >إنشئ حساب</button>
+        </div>
+        <button class="btn-std m-auto mt-3">دخول</button>
     </div>
 </div>
+
+{/if}
+

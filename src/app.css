@@ -18,9 +18,14 @@
 		@apply transition-all w-5/6 m-auto border-sky-600 border-t;
 	}
     .std-textarea{
-        @apply m-auto p-2 w-full rounded-lg border-2 outline 
-        outline-0 hover:outline-1 active:outline-[3px] outline-sky-600
-        border-sky-700 focus:outline-none focus:ring focus:ring-sky-300;
+        @apply transition-all m-auto p-2 w-full rounded-lg border-2 outline 
+        outline-0 hover:outline-1 active:outline-[3px] outline-sky-500
+        border-sky-600 focus:outline-none focus:ring focus:ring-sky-300;
+    }
+    .std-textbox{
+        @apply transition-all m-auto px-2 py-1 w-full rounded-lg border-2 outline 
+        outline-0 hover:outline-1 active:outline-[3px] outline-sky-500
+        border-sky-600 focus:outline-none focus:ring focus:ring-sky-300;
     }
     .hoverd-graded{
         @apply hover:via-cyan-200/40;
